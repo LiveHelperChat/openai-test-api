@@ -1,0 +1,40 @@
+{
+  "model": "o3-mini",
+  "stream": true,
+  "parallel_tool_calls": false,
+  "input": [
+  ],
+  "tools": [
+    {
+      "type": "file_search",
+      "vector_store_ids": [
+        "YOUR_VECTOR_STORE_ID"
+      ]
+    },
+    {
+      "type": "function",
+      "name": "password_reminder",
+      "description": "Sends a password reset link to the provided email address.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "email": {
+            "type": "string",
+            "description": "The email address associated with the account."
+          }
+        },
+        "required": ["email"]
+      }
+    },
+    {
+      "type": "function",
+      "name": "support_price",
+      "description": "Returns paid support price",
+      "parameters": {
+        "type": "object",
+        "properties": {},
+        "required": []
+      }
+    }
+  ]
+}

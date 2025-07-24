@@ -1,0 +1,42 @@
+[
+  {
+    "name": "support_price",
+    "messages": [
+      {
+        "role": "user",
+        "content": "What is paid support price?"
+      }
+    ],
+    "expected_output": {"type": "toolcall", "tool": "support_price"}
+  },
+  {
+    "name": "password_reminder",
+    "messages": [
+      {
+        "role": "user",
+        "content": "I forgot my password, my e-mail is remdex@gmail.com"
+      }
+    ],
+    "expected_output": {"type": "toolcall", "tool": "password_reminder", "arguments" : {"email": "remdex@gmail.com"} }
+  },
+  {
+    "name": "welcome",
+    "messages": [
+      {
+        "role": "user",
+        "content": "Hi"
+      }
+    ],
+    "expected_output": {"type": "message"}
+  },
+  {
+    "name": "unrelated",
+    "messages": [
+      {
+        "role": "user",
+        "content": "Whois is the president of the USA?"
+      }
+    ],
+    "expected_output": {"type": "message", "meaning": "Answer to user question should not be provided as it is not related to the live helper chat."}
+  }
+]
